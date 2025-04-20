@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Haji Park Society - Luxury Community Living</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Official website of Haji Park Society - A premium residential community offering luxury living with modern amenities">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Haji Park Society">
+    <meta property="og:description" content="Luxury community living with premium amenities">
+    <meta property="og:image" content="https://yourdomain.com/img/social-preview.jpg">
+    <meta property="og:url" content="https://yourdomain.com">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    
+    <!-- Modern Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Modern CSS Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/2.7.1/css/lightgallery.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #e74c3c;
+            --accent-color: #3498db;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --text-light: #7f8c8d;
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+        
+        /* Modern Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 30px rgba(0, 0, 0, 0.1);
+            padding: 1rem 2rem;
+            transition: var(--transition);
+        }
+        
+        .navbar.scrolled {
+            padding: 0.5rem 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-link {
+            color: var(--dark-color);
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            margin: 0 0.25rem;
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        .nav-link:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary-color);
+            transition: var(--transition);
+        }
+        
+        .nav-link:hover:before {
+            width: 100%;
+        }
+        
+        .nav-link.active {
+            color: var(--secondary-color);
+        }
+        
+        .nav-link i {
+            margin-right: 8px;
+            font-size: 1.1rem;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            height: 100vh;
+            min-height: 700px;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/hero-bg.jpg') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            z-index: 2;
+            color: white;
+        }
+        
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Feature Cards */
+        .feature-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            height: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Gallery Section */
+        .gallery-item {
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .gallery-item img {
+            transition: var(--transition);
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: white;
+            padding: 1.5rem;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            opacity: 1;
+        }
+        
+        /* Member Cards */
+        .member-card {
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            text-align: center;
+            height: 100%;
+        }
+        
+        .member-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        .member-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin: 1.5rem 0;
+        }
+        
+        /* Contact Form */
+        .contact-form .form-control {
+            border-radius: 8px;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-form .form-control:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.25);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 3rem 0;
+        }
+        
+        .footer a {
+            color: var(--light-color);
+            transition: var(--transition);
+        }
+        
+        .footer a:hover {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            transition: var(--transition);
+        }
+        
+        .social-icons a:hover {
+            background: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+        
+        /* Section Titles */
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-bottom: 1rem;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--secondary-color);
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--primary-color);
+            transform: translateY(-5px);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .navbar {
+                padding: 0.75rem 1rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="img/logo.png" alt="Haji Park Society" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home"><i class="fas fa-home"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about"><i class="fas fa-info-circle"></i> About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery"><i class="fas fa-images"></i> Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#restaurant"><i class="fas fa-utensils"></i> Spice Garden</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#members"><i class="fas fa-users"></i> Members</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="hero-content animate__animated animate__fadeIn">
+                <h1 class="hero-title">Haji Park Society</h1>
+                <p class="hero-subtitle">Experience luxury community living with premium amenities, safety, and a vibrant social environment in the heart of the city.</p>
+                <div class="d-flex gap-3">
+                    <a href="#about" class="btn btn-primary btn-lg px-4 py-3">Explore Community</a>
+                    <a href="#contact" class="btn btn-outline-light btn-lg px-4 py-3">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-5 bg-light" id="about">
+        <div class="container py-5">
+            <h2 class="text-center section-title">Our Community Values</h2>
+            <p class="text-center mb-5 lead">We are committed to creating a harmonious living environment that prioritizes safety, inclusivity, and quality of life for all residents.</p>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-card animate__animated animate__fadeInUp">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Safety & Security</h3>
+                        <p>24/7 gated security with CCTV surveillance, trained personnel, and emergency response systems to ensure peace of mind for all residents.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
+                        <div class="feature-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Inclusive Community</h3>
+                        <p>A welcoming environment that celebrates diversity and fosters mutual respect among all residents regardless of background or beliefs.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card animate__animated animate__fadeInUp" style="animation-delay: 0.4s">
+                        <div class="feature-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3>Vibrant Activities</h3>
+                        <p>Regular community events, cultural celebrations, and social gatherings to strengthen neighborly bonds and create lasting memories.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-5" id="gallery">
+        <div class="container py-5">
+            <h2 class="text-center section-title">Community Gallery</h2>
+            <p class="text-center mb-5 lead">Explore the beauty and amenities of Haji Park Society through our photo collection.</p>
+            
+            <div class="row gallery-container">
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item">
+                        <img src="img/iMasjid.jpg" alt="Haji Park Masjid" class="img-fluid">
+                        <div class="gallery-caption">
+                            <h5>Community Mosque</h5>
+                            <p>Beautiful architecture with modern facilities</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item">
+                        <img src="img/iPark.jpg" alt="Haji Park" class="img-fluid">
+                        <div class="gallery-caption">
+                            <h5>Landscaped Parks</h5>
+                            <p>Lush green spaces for relaxation</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item">
+                        <img src="img/iSchool.jpg" alt="Haji Park School" class="img-fluid">
+                        <div class="gallery-caption">
+                            <h5>Educational Facilities</h5>
+                            <p>Quality education within the community</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item">
+                        <img src="img/iEntrance.jpg" alt="Entrance" class="img-fluid">
+                        <div class="gallery-caption">
+                            <h5>Grand Entrance</h5>
+                            <p>Impressive gateway to the community</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item">
+                        <img src="img/iRightLane.jpg" alt="Main Avenue" class="img-fluid">
+                        <div class="gallery-caption">
+                            <h5>Tree-Lined Avenues</h5>
+                            <p>Beautifully maintained roads</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item">
+                        <img src="img/iLeftLane.jpg" alt="Main Avenue" class="img-fluid">
+                        <div class="gallery-caption">
+                            <h5>Pedestrian Walkways</h5>
+                            <p>Safe walking paths throughout</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spice Garden Restaurant Section -->
+    <section class="py-5 bg-light" id="restaurant">
+        <div class="container py-5">
+            <h2 class="text-center section-title">Spice Garden Restaurant</h2>
+            <p class="text-center mb-5 lead">Experience exquisite dining at our community's premium restaurant</p>
+            
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6">
+                    <img src="img/restaurant.jpg" alt="Spice Garden Restaurant" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="mb-4">Culinary Excellence in Haji Park</h3>
+                    <p>Spice Garden offers a diverse menu featuring traditional and contemporary cuisine prepared by our master chefs. Our restaurant provides:</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Elegant dining atmosphere</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Family-friendly environment</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Special events and catering</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Community member discounts</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary mt-3">View Menu & Hours</a>
+                </div>
+            </div>
+            
+            <h4 class="text-center mb-4">Photo Gallery</h4>
+            <div class="row">
+                <div class="col-md-3 col-6 mb-4">
+                    <img src="img/spice-garden-1.jpg" alt="Restaurant Interior" class="img-fluid rounded shadow" data-bs-toggle="modal" data-bs-target="#galleryModal" onclick="currentSlide(1)">
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <img src="img/spice-garden-2.jpg" alt="Dining Area" class="img-fluid rounded shadow" data-bs-toggle="modal" data-bs-target="#galleryModal" onclick="currentSlide(2)">
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <img src="img/spice-garden-3.jpg" alt="Food Presentation" class="img-fluid rounded shadow" data-bs-toggle="modal" data-bs-target="#galleryModal" onclick="currentSlide(3)">
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <img src="img/spice-garden-4.jpg" alt="Outdoor Seating" class="img-fluid rounded shadow" data-bs-toggle="modal" data-bs-target="#galleryModal" onclick="currentSlide(4)">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Member Area Section -->
+    <section class="py-5" id="members">
+        <div class="container py-5">
+            <h2 class="text-center section-title">Member Area</h2>
+            <p class="text-center mb-5 lead">Exclusive resources and services for Haji Park Society residents</p>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="member-card card animate__animated animate__fadeIn">
+                        <div class="card-body">
+                            <div class="member-icon">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <h3 class="card-title">Become a Member</h3>
+                            <p class="card-text">Join our vibrant community by registering through our online form.</p>
+                            <a href="memLogin.html" class="btn btn-primary" target="_blank">Register Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="member-card card animate__animated animate__fadeIn" style="animation-delay: 0.2s">
+                        <div class="card-body">
+                            <div class="member-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3 class="card-title">Member Directory</h3>
+                            <p class="card-text">Access our community directory (login required for privacy).</p>
+                            <a href="memViewLogin.html" class="btn btn-primary" target="_blank">View Members</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="member-card card animate__animated animate__fadeIn" style="animation-delay: 0.4s">
+                        <div class="card-body">
+                            <div class="member-icon">
+                                <i class="fas fa-file-invoice-dollar"></i>
+                            </div>
+                            <h3 class="card-title">Society Subscriptions</h3>
+                            <p class="card-text">View and manage your community fee payments and status.</p>
+                            <a href="adminLogin.html" class="btn btn-primary" target="_blank">Fee Status</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-5 bg-light" id="contact">
+        <div class="container py-5">
+            <h2 class="text-center section-title">Contact Us</h2>
+            <p class="text-center mb-5 lead">Get in touch with the Haji Park Society management team</p>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="contact-form card border-0 shadow">
+                        <div class="card-body p-5">
+                            <h3 class="mb-4">Send Us a Message</h3>
+                            <form id="contactForm">
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                </div>
+                                <div class="mb-3">
+                                    <textarea class="form-control" id="message" rows="5" placeholder="Your Message" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="contact-info">
+                        <h3 class="mb-4">Contact Information</h3>
+                        <p class="mb-4">For general inquiries, maintenance requests, or community matters, please reach out to our management team.</p>
+                        
+                        <div class="d-flex mb-4">
+                            <div class="me-4">
+                                <i class="fas fa-map-marker-alt fa-2x text-primary"></i>
+                            </div>
+                            <div>
+                                <h5>Address</h5>
+                                <p>Haji Park Society, Near Kasur Bypass, Lahore, Pakistan</p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex mb-4">
+                            <div class="me-4">
+                                <i class="fas fa-phone-alt fa-2x text-primary"></i>
+                            </div>
+                            <div>
+                                <h5>Phone</h5>
+                                <p>+92 300 1234567 (Management Office)</p>
+                                <p>+92 300 7654321 (Emergency)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex mb-4">
+                            <div class="me-4">
+                                <i class="fas fa-envelope fa-2x text-primary"></i>
+                            </div>
+                            <div>
+                                <h5>Email</h5>
+                                <p>info@hajiparksociety.com</p>
+                                <p>management@hajiparksociety.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex">
+                            <div class="me-4">
+                                <i class="fas fa-clock fa-2x text-primary"></i>
+                            </div>
+                            <div>
+                                <h5>Office Hours</h5>
+                                <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+                                <p>Saturday: 9:00 AM - 1:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13610.49685092928!2d74.29154326977538!3d31.481759399999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391903cc00000000%3A0x123456789abcde!2sHaji%20Park%20Society!5e0!3m2!1sen!2s!4v1234567890123!5m2!1sen!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <img src="img/logo-white.png" alt="Haji Park Society" height="40" class="mb-3">
+                    <p>Haji Park Society is a premier residential community offering luxury living with modern amenities, safety, and a vibrant social environment.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-white mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#home">Home</a></li>
+                        <li class="mb-2"><a href="#about">About</a></li>
+                        <li class="mb-2"><a href="#gallery">Gallery</a></li>
+                        <li class="mb-2"><a href="#restaurant">Spice Garden</a></li>
+                        <li class="mb-2"><a href="#members">Members</a></li>
+                        <li class="mb-2"><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-white mb-4">Community Services</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#">Maintenance Requests</a></li>
+                        <li class="mb-2"><a href="#">Event Calendar</a></li>
+                        <li class="mb-2"><a href="#">Community Rules</a></li>
+                        <li class="mb-2"><a href="#">Facility Booking</a></li>
+                        <li class="mb-2"><a href="#">News & Updates</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="text-white mb-4">Newsletter</h5>
+                    <p>Subscribe to our newsletter for community updates and announcements.</p>
+                    <form class="mt-3">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email" aria-label="Your Email">
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="mt-5 mb-4" style="border-color: rgba(255,255,255,0.1)">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2023 Haji Park Society. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">Website designed and maintained by: Engineer Muhammad Akram, Additional SE GEPCO</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Gallery Modal -->
+    <div class="modal fade" id="galleryModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img id="modalImage" class="img-fluid" src="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/2.7.1/lightgallery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    
+    <!-- Main JavaScript -->
+    <script>
+        // Initialize WOW.js for animations
+        new WOW().init();
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const navbarCollapse = document.querySelector('.navbar-collapse');
+                    if (navbarCollapse.classList.contains('show')) {
+                        const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                        bsCollapse.hide();
+                    }
+                }
+            });
+        });
+        
+        // Back to top button
+        const backToTopButton = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
+        
+        // Gallery modal functionality
+        function currentSlide(n) {
+            const images = [
+                'img/spice-garden-1.jpg',
+                'img/spice-garden-2.jpg',
+                'img/spice-garden-3.jpg',
+                'img/spice-garden-4.jpg'
+            ];
+            document.getElementById('modalImage').src = images[n-1];
+        }
+        
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Here you would typically send the form data to your server
+            this.action = 'https://formsubmit.co/eengineer.akram@gmail.com';
+    
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+        
+        // Initialize lightGallery
+        lightGallery(document.querySelector('.gallery-container'), {
+            selector: '.gallery-item',
+            download: false,
+            counter: false
+        });
+    </script>
+</body>
+</html>
